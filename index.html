@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hockey Manager</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport meta -->
+    <title>Hockey Manager</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hockey Manager</h1>
-  <div id="changeteam">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Image Slider</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="slider-container">
-            <!-- Backward Button -->
-            <button id="backBtn">&lt; Back</button>
-            
-            <!-- Image Element -->
-            <img id="myImage" src="image1.jpg" alt="Slider Image">
-            
-            <!-- Forward Button -->
-            <button id="fwdBtn">Forward &gt;</button>
-        </div>
+    <h1>Hockey Manager</h1>
     
-        <script src="script.js"></script>
-    </body>
-  </div>
-
-  <script src="script.js"></script>
+    <div id="changeteam" class="slider-container">
+        <!-- Backward Button -->
+        <button id="backBtn" onclick="TeamImageBack()">&lt; Back</button>
+        
+        <!-- Image Element -->
+        <img id="myImage" src="image1.jpg" alt="Slider Image">
+        
+        <!-- Forward Button -->
+        <button id="fwdBtn" onclick="TeamImageForward()">Forward &gt;</button>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
