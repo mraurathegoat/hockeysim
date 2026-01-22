@@ -11,13 +11,12 @@
     
     <div id="changeteam" class="slider-container">
         <!-- Backward Button -->
-        <button id="backBtn" onclick="TeamImageBack()">&lt; Back</button>
+        <button id="backBtn" onclick="changeImage(-1)">&lt; Back</button>
         
-        <!-- Image Element -->
-        <img id="myImage" src="myImage.src" alt="Slider Image">
+        <img id="teamImage" src="images/ducks.png" alt="NHL Team Logo">
         
         <!-- Forward Button -->
-        <button id="fwdBtn" onclick="TeamImageForward()">Forward &gt;</button>
+        <button id="fwdBtn" onclick="changeImage(1)">Forward &gt;</button>
     </div>
     
     <script src="script.js"></script>
