@@ -1,8 +1,14 @@
+
+
 body {
   font-family: Arial, sans-serif;
   background: #0b1d33;
   color: white;
   text-align: center;
+}
+
+h1 {
+  font-size: 100px
 }
 
 button{
