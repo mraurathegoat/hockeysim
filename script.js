@@ -7,7 +7,7 @@ function playGame() {
   if (goalsFor>goalsAgainst){
       resultText=`You won ${goalsFor}-${goalsAgainst}!`;
   } else if (goalsFor === goalsAgainst) {
-    resultText = `You tied ${goalsFor}-${goalsAgainst};
+    resultText = `You tied ${goalsFor}-${goalsAgainst}`;
     }
 
   document.getElementById("result").textContent = resultText;
