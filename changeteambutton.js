@@ -29,7 +29,7 @@ function changeImage(direction) {
     const teamImage = document.getElementById('teamImage');
     
     // Construct the new image source path
-    const newImageSrc = 'images/' + teamNames[currentIndex] + '.png';
+    const newImageSrc = teamNames[currentIndex] + '.png';
     
     // Update the image source
     teamImage.src = newImageSrc;
