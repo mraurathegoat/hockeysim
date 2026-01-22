@@ -1,43 +1,39 @@
-// script.js
-
-// List of image file names (add quotes around each name!)
-const images = [
-    'AnaheimDucks.png', 'BostonBruins.png', 'BuffaloSabres.png',
-    'CalgaryFlames.png', 'CarolinaHurricanes.png', 'ChicagoBlackhawks.png',
-    'ColoradoAvalanche.png', 'ColumbusBlueJackets.png', 'DallasStars.png',
-    'DetroitRedWings.png', 'EdmontonOilers.png', 'FloridaPanthers.png',
-    'LosAngelesKings.png', 'MinnesotaWild.png', 'MontrealCanadiens.png',
-    'NewJerseyDevils.png', 'NewYorkIslanders.png', 'NewYorkRangers.png',
-    'OttawaSenators.png', 'PhiladelphiaFlyers.png', 'PittsburghPenguins.png',
-    'SanJoseSharks.png', 'SeattleKraken.png', 'StLouisBlues.png',
-    'TampaBayLightning.png', 'TorontoMapleLeafs.png', 'UtahMammoth.png',
-    'VancouverCanucks.png', 'VegasGoldenKnights.png', 'WashingtonCapitals.png',
-    'WinnipegJets.png'
+// Array of NHL team names (filenames)
+const teamNames = [
+    'AnaheimDucks', 'BostonBruins', 'BuffaloSabres',
+    'CalgaryFlames', 'CarolinaHurricanes', 'ChicagoBlackhawks',
+    'ColoradoAvalanche', 'ColumbusBlueJackets', 'DallasStars',
+    'DetroitRedWings', 'EdmontonOilers', 'FloridaPanthers',
+    'LosAngelesKings', 'MinnesotaWild', 'MontrealCanadiens',
+    'NewJerseyDevils', 'NewYorkIslanders', 'NewYorkRangers',
+    'OttawaSenators', 'PhiladelphiaFlyers', 'PittsburghPenguins',
+    'SanJoseSharks', 'SeattleKraken', 'StLouisBlues',
+    'TampaBayLightning', 'TorontoMapleLeafs', 'UtahMammoth',
+    'VancouverCanucks', 'VegasGoldenKnights', 'WashingtonCapitals',
+    'WinnipegJets'
 ];
 
-let currentIndex = 0;
+let currentIndex = 0; // Start with the first image
 
-// Get references to the HTML elements (use the actual IDs from your HTML)
-const myImage = document.getElementById('myImage'); // Corrected: pass ID as string
-const backBtn = document.getElementById('backBtn');   // Corrected: pass ID as string
-const fwdBtn = document.getElementById('fwdBtn');     // Corrected: pass ID as string
+function changeImage(direction) {
+    currentIndex += direction;
 
-// Function to update the displayed image
-function updateImage() {
-    myImage.src = images[currentIndex];
+    // Wrap around logic for both ends of the array
+    if (currentIndex >= teamNames.length) {
+        currentIndex = 0; // Go to the first image
+    } else if (currentIndex < 0) {
+        currentIndex = teamNames.length - 1; // Go to the last image
+    }
+
+    // Get the image element by its ID
+    const teamImage = document.getElementById('teamImage');
+    
+    // Construct the new image source path
+    const newImageSrc = 'images/' + teamNames[currentIndex] + '.png';
+    
+    // Update the image source
+    teamImage.src = newImageSrc;
+    
+    // Update alt text (optional, but good practice)
+    teamImage.alt = teamNames[currentIndex] + ' logo';
 }
-
-// Event listener for the Forward button (changed function name for clarity)
-fwdBtn.addEventListener('click', function() { // Corrected: Added event listener
-    currentIndex = (currentIndex + 1)
-    updateImage();
-});
-
-// Event listener for the Backward button (changed function name for clarity)
-backBtn.addEventListener('click', function() { // Corrected: Added event listener
-    currentIndex = (currentIndex - 1)
-    updateImage();
-});
-
-// Initialize with the first image
-updateImage();
