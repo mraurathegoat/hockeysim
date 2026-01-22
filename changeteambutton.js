@@ -15,14 +15,14 @@ function updateImage() {
 }
 
 // Event listener for the "Forward" button
-fwdBtn.addEventListener("click", () => {
+function TeamImageBack(){
     // Increment index, looping back to 0 if at the end of the array
     currentIndex = (currentIndex + 1) % images.length;
     updateImage();
 });
 
 // Event listener for the "Backward" button
-backBtn.addEventListener("click", () => {
+function TeamImageForward(){
     // Decrement index, looping to the last element if at the start
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateImage();
