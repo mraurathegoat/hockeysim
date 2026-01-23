@@ -43,3 +43,17 @@ document.getElementById("standings").textContent =
 document.getElementById("schedule").textContent =
   "Oct 12 vs BOS\nOct 14 @ NYR\nOct 16 vs TOR";
 
+const playersBox = document.getElementById("playersBox");
+
+playersBox.addEventListener("click", () => {
+    // Save which team is currently selected
+    localStorage.setItem("selectedTeamIndex", currentIndex);
+
+    // Optional: specify the type if needed
+    localStorage.setItem("playerPageType", "lineups"); // default view
+
+    // Go to the players page
+    window.location.href = "players.html";
+});
+
+
