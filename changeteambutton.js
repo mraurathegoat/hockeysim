@@ -46,11 +46,11 @@ function changeImage(direction) {
 }
 localStorage.setItem("selectedTeam", teams[currentIndex].file);
 
+// This must be at top-level, not inside any other function
 function playGame() {
-  // Save selected team
-  localStorage.setItem("selectedTeamIndex", currentIndex);
-
-  // Go to team overview page
-  window.location.href = "team.html";
+    console.log("Play clicked, navigating...");
+    localStorage.setItem("selectedTeamIndex", currentIndex);
+    window.location.href = "team.html";
 }
+
 
