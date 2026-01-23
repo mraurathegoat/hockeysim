@@ -1,3 +1,4 @@
+console.log("changeteambutton.js loaded");
 const teams = [
   { name: "Anaheim Ducks", file: "AnaheimDucks" },
   { name: "Boston Bruins", file: "BostonBruins" },
@@ -44,3 +45,12 @@ function changeImage(direction) {
     teams[currentIndex].name;
 }
 localStorage.setItem("selectedTeam", teams[currentIndex].file);
+
+function playGame() {
+  // Save selected team
+  localStorage.setItem("selectedTeamIndex", currentIndex);
+
+  // Go to team overview page
+  window.location.href = "team.html";
+}
+
