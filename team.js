@@ -5,6 +5,10 @@ const teams = [
   { name: "Boston Bruins", file: "BostonBruins" },
   { name: "Toronto Maple Leafs", file: "TorontoMapleLeafs" }
 ];
+playersBox.addEventListener("click", () => {
+    alert("Players box clicked!");
+});
+
 
 // Get selected team index from localStorage
 let currentIndex = localStorage.getItem("selectedTeamIndex");
