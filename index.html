@@ -2,22 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hockey Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Hockey Manager</h1>
+    
     <div id="changeteam" class="slider-container">
         <img id="teamImage" src="PittsburghPenguins.png" alt="NHL Logo">
         <h3 id="teamName">Pittsburgh Penguins</h3>
         <br></br>
-        <button id="backBtn" onclick="changeImage(-1)">&lt; Back</button>
-        <button id="fwdBtn" onclick="changeImage(1)">Forward &gt;</button>
+        <button id="backBtn">&lt; Back</button>
+        <button id="fwdBtn">Forward &gt;</button>
     </div>
+
     <div id="play">
-        <button id="playBtn" onclick="playGame()">Play Game</button>  
-    <script src="changeteambutton.js"></script>
+        <button id="playBtn">Play Game</button>
     </div>
+
+    <!-- Load JS last, after the DOM exists -->
+    <script src="changeteambutton.js"></script>
 </body>
 </html>
