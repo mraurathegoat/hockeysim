@@ -9,12 +9,30 @@
 
   <h1 id="teamTitle"></h1>
 
-  <img id="teamLogo" width="300">
+  <div class="dashboard">
+    <div class="box next-game">
+      <h2>Next Game</h2>
+      <p id="nextGame">Loading...</p>
+    </div>
 
-  <div class="overview">
-    <p><strong>Conference:</strong> <span id="conference"></span></p>
-    <p><strong>Division:</strong> <span id="division"></span></p>
-    <p><strong>Overall Rating:</strong> <span id="rating"></span></p>
+    <div class="box players">
+      <h2>Players</h2>
+      <ul>
+        <li>Lineups</li>
+        <li>Scratches</li>
+        <li>Transfers</li>
+      </ul>
+    </div>
+
+    <div class="box standings">
+      <h2>Standings</h2>
+      <p id="standings">Loading...</p>
+    </div>
+
+    <div class="box schedule">
+      <h2>Schedule</h2>
+      <p id="schedule">Loading...</p>
+    </div>
   </div>
 
   <button onclick="goBack()">Change Team</button>
