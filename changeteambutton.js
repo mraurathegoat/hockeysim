@@ -35,22 +35,33 @@ const teams = [
 
 let currentIndex = 0;
 
-function changeImage(direction) {
-  currentIndex = (currentIndex + direction + teams.length) % teams.length;
+// INITIALIZE PAGE
+const teamImage = document.getElementById("teamImage");
+const teamName = document.getElementById("teamName");
 
-  document.getElementById("teamImage").src =
-    teams[currentIndex].file + ".png";
-
-  document.getElementById("teamName").textContent =
-    teams[currentIndex].name;
+// UPDATE IMAGE & TEXT
+function updateTeam() {
+    teamImage.src = teams[currentIndex].file + ".png";
+    teamName.textContent = teams[currentIndex].name;
 }
-localStorage.setItem("selectedTeam", teams[currentIndex].file);
 
-// This must be at top-level, not inside any other function
-function playGame() {
-    console.log("Play clicked, navigating...");
+// BUTTONS
+document.getElementById("backBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + teams.length) % teams.length;
+    updateTeam();
+});
+
+document.getElementById("fwdBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % teams.length;
+    updateTeam();
+});
+
+// PLAY GAME BUTTON
+document.getElementById("playBtn").addEventListener("click", () => {
+    console.log("Play Game clicked!"); // test
     localStorage.setItem("selectedTeamIndex", currentIndex);
     window.location.href = "team.html";
-}
+});
 
-
+// INITIAL DISPLAY
+updateTeam();
