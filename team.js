@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 // Teams array
 const teams = [
   { name: "Pittsburgh Penguins", file: "PittsburghPenguins" },
@@ -28,3 +29,4 @@ playersBox.addEventListener("click", () => {
     localStorage.setItem("playerPageType", "lineups");
     window.location.href = "players.html";
 });
+});  
