@@ -8,14 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add other teams here
     ];
 
-    // 2️⃣ Get selected team index from localStorage
-    let currentIndex = localStorage.getItem("selectedTeamIndex");
-
-    if (currentIndex === null) {
+    let currentIndex = parseInt(localStorage.getItem("selectedTeamIndex"), 10);
+    if (isNaN(currentIndex) || currentIndex < 0 || currentIndex >= teams.length) {
         currentIndex = 0; // fallback to first team
-    } else {
-        currentIndex = parseInt(currentIndex, 10);
     }
+    const team = teams[currentIndex];
 
     // 3️⃣ Safety check
     if (isNaN(currentIndex) || currentIndex < 0 || currentIndex >= teams.length) {
