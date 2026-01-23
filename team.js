@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 3️⃣ Access the selected team
-    const team = teams[currentIndex]; // Declare team only once
+    let team = teams[currentIndex]; // Declare team only once
 
     // 4️⃣ Update Team Overview page
     const teamTitle = document.getElementById("teamTitle");
