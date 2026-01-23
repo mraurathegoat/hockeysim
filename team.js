@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isNaN(currentIndex) || currentIndex < 0 || currentIndex >= teams.length) {
         currentIndex = 0; // fallback to first team
     }
-    const team = teams[currentIndex];
 
     // 3️⃣ Safety check
     if (isNaN(currentIndex) || currentIndex < 0 || currentIndex >= teams.length) {
