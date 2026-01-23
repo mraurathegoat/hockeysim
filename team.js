@@ -1,3 +1,39 @@
+const teams = [
+  {
+    name: "Anaheim Ducks",
+    file: "AnaheimDucks",
+    conference: "Western",
+    division: "Pacific",
+    rating: 82
+  },
+  {
+    name: "Boston Bruins",
+    file: "BostonBruins",
+    conference: "Eastern",
+    division: "Atlantic",
+    rating: 90
+  },
+  // add rest later
+];
+
+const index = localStorage.getItem("selectedTeamIndex");
+
+if (index === null) {
+  window.location.href = "index.html";
+}
+
+const team = teams[index];
+
+document.getElementById("teamTitle").textContent = team.name;
+document.getElementById("teamLogo").src = team.file + ".png";
+document.getElementById("conference").textContent = team.conference;
+document.getElementById("division").textContent = team.division;
+document.getElementById("rating").textContent = team.rating;
+
+function goBack() {
+  window.location.href = "index.html";
+}
+
 document.getElementById("nextGame").textContent =
   "vs Boston Bruins — Oct 12";
 
