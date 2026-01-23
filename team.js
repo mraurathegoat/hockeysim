@@ -8,24 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add other teams here
     ];
 
+    // 2️⃣ Get selected team index safely
     let currentIndex = parseInt(localStorage.getItem("selectedTeamIndex"), 10);
     if (isNaN(currentIndex) || currentIndex < 0 || currentIndex >= teams.length) {
         currentIndex = 0; // fallback to first team
     }
 
-    // 3️⃣ Safety check
-    if (isNaN(currentIndex) || currentIndex < 0 || currentIndex >= teams.length) {
-        currentIndex = 0;
-    }
-
-    const team = teams[currentIndex];
+    // 3️⃣ Access the selected team
+    const team = teams[currentIndex]; // Declare team only once
 
     // 4️⃣ Update Team Overview page
     const teamTitle = document.getElementById("teamTitle");
     if (teamTitle) teamTitle.textContent = team.name;
 
-    // Optional: Add a logo image if you have one
-    // <img id="teamLogo" src="" alt="Team Logo">
+    // Optional: Update logo if you have <img id="teamLogo">
     // const teamLogo = document.getElementById("teamLogo");
     // if (teamLogo) teamLogo.src = team.file + ".png";
 
@@ -43,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const playersBox = document.getElementById("playersBox");
     if (playersBox) {
         playersBox.addEventListener("click", () => {
-            // Save current team index in case it changes later
             localStorage.setItem("selectedTeamIndex", currentIndex);
             localStorage.setItem("playerPageType", "lineups"); // default view
             window.location.href = "players.html";
